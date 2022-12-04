@@ -2,6 +2,8 @@
   <div>
     {{ msg }}
   </div>
+  <div v-if="isShowing" v-html="title"></div>
+  <div v-else>Damn Else</div>
 </template>
 
 <script lang="ts">
@@ -11,7 +13,9 @@ export default defineComponent({
   name: 'App',
   data() {
     return {
-      msg: 'Hello World'
+      msg: 'Hello Worlds',
+      title: '<h1>Hello World</h1>',
+      isShowing: true,
     }
   }
 })
