@@ -1,7 +1,8 @@
 <template>
-  <div>
-    {{ msg }}
-  </div>
+  <h1>Marvel Heroes</h1>
+  <ol>
+    <li v-for="(hero, index) in marvelHeroes" :key="index">{{ hero.name }}</li>
+  </ol>
 </template>
 
 <script lang="ts">
@@ -11,7 +12,10 @@ export default defineComponent({
   name: 'App',
   data() {
     return {
-      msg: 'Hello World'
+      marvelHeroes: [{name: 'Thor'},
+                     {name: 'Iron-Man'},
+                     {name: 'Hulk'}, 
+                     {name: 'Captain America'}],
     }
   }
 })
