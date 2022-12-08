@@ -1,0 +1,54 @@
+.container{
+  @apply
+    w-full
+    flex;
+}
+
+
+.heros-app{
+  @apply
+    m-auto;
+
+    &__title{
+      @apply
+        text-2xl
+        text-center;
+    }
+
+  .hero-list{
+    @apply
+      flex
+      justify-between
+      mb-3;
+      button{
+        @apply
+          border
+          border-tonic-translucent-10
+          rounded
+          bg-tonic-default
+          p-3;
+
+      }
+  }
+
+  .hero-add {
+    @apply
+      mt-10;
+      &__input{
+        @apply
+          border
+          rounded;
+      }
+
+      button{
+        @apply
+          border
+          rounded
+          bg-gradient-to-r
+          from-tonic-default
+          to-accent-default
+          text-sm
+          text-white;
+      }
+  }
+}

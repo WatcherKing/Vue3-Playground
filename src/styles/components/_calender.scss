@@ -1,0 +1,33 @@
+.calender{
+  @apply
+    mx-auto;
+    &__header{
+      @apply
+        text-2xl
+        text-tonic-default
+        my-2
+        text-center;
+    }
+    &__day{
+      @apply
+        flex
+        my-2;
+        &-each{
+          @apply
+            text-center;
+          width: 14.28%;
+        }
+    }
+
+    &__num-day{
+      @apply
+        flex
+        flex-wrap;
+        &-each{
+          @apply
+            text-center;
+            width: 14.28%;
+
+        }
+    }
+}
