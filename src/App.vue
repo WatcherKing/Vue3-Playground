@@ -1,22 +1,11 @@
 <template>
-	<AppHeader />
-	<div class="container">
-		<!-- <MarvelHeroes /> -->
-		<Calender />
-	</div>
+	<router-view></router-view>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from "vue";
-import AppHeader from "@/components/AppHeader.vue";
-import MarvelHeroes from "@/components/MarvelHeroes.vue";
-import Calender from "@/components/Calender.vue";
+import { defineComponent } from "vue";
 
 export default defineComponent({
 	name: "App",
-	components: {
-		AppHeader,
-		Calender,
-	},
 });
 </script>

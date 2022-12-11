@@ -8,17 +8,31 @@
         my-2
         text-center;
     }
-    &__day{
+    &__sub-header{
       @apply
+        bg-accent-translucent
+        text-accent-default
+        px-2
         flex
-        my-2;
-        &-each{
+        justify-between;
+        h2 {
           @apply
-            text-center;
-          width: 14.28%;
+            font-bold;
         }
     }
-
+    &__day{
+      @apply
+        bg-primary-translucent
+        flex
+        py-2;
+        &-each{
+          @apply
+            text-center
+            border-x;
+          width: 14.28%;
+          
+        }
+    }
     &__num-day{
       @apply
         flex
@@ -27,7 +41,25 @@
           @apply
             text-center;
             width: 14.28%;
+            &-current {
+                @apply 
+                  bg-blue-grey
+                  text-white;
+              }
 
         }
     }
+    &__buttons{
+      @apply
+        flex
+        justify-between
+        my-4;
+        button{
+          @apply
+            px-2
+            border
+            rounded;
+        }
+    }
+
 }
