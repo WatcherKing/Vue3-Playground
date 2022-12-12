@@ -1,6 +1,5 @@
-.header{
-  @apply
-    w-full
+.header {
+	@apply w-full
     bg-gradient-to-r
     from-primary-default
     to-primary-translucent
@@ -9,24 +8,27 @@
     py-2
     flex
     justify-between;
-    &__buttons{
-      @apply
-        flex
+	&__buttons {
+		@apply flex
         gap-4
         text-blue-grey;
-        &-1, &-2, &-3{
-          @apply
-            border
+		&-1,
+		&-2,
+		&-3,
+		&-4 {
+			@apply border
             px-1
             rounded
             bg-white;
-        }
-        &-1:hover, .active , &-2:hover, &-3:hover{
-          @apply
-            border-primary-default
+		}
+		&-1:hover,
+		.active,
+		&-2:hover,
+		&-3:hover,
+		&-4:hover {
+			@apply border-primary-default
             bg-blue-grey
             text-primary-light;
-        }
-        
-      }
+		}
+	}
 }

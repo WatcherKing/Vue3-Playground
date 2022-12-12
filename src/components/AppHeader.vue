@@ -39,6 +39,11 @@ export default defineComponent({
 					name: "Markdown",
 					className: "header__buttons-3",
 				},
+				{
+					path: "/slider",
+					name: "Carosel",
+					className: "header__buttons-4",
+				},
 			],
 		};
 	},

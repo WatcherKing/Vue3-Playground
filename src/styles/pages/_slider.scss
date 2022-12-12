@@ -1,0 +1,29 @@
+.slider {
+	@apply flex
+    flex-wrap
+    w-full;
+	&__header {
+		@apply w-full
+        text-center
+        text-3xl
+        my-4;
+	}
+	&__items {
+		@apply absolute
+      w-full;
+	}
+	&__item-1,
+	&__item-2,
+	&__item-3 {
+		height: 350px;
+	}
+	&__item-1 {
+		@apply bg-tonic-default;
+	}
+	&__item-2 {
+		@apply bg-primary-default;
+	}
+	&__item-3 {
+		@apply bg-accent-default;
+	}
+}

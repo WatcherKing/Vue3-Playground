@@ -18,7 +18,13 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'markdown',
         name: 'Markdown',
-        component: () => import('@/pages/MarkdownPage.vue')      }
+        component: () => import('@/pages/MarkdownPage.vue')
+      },
+      {
+        path: 'slider',
+        name: 'Slider',
+        component: () => import('@/pages/Slider.vue')
+      }
     ]
   }
 
