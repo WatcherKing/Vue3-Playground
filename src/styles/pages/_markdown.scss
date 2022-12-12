@@ -1,0 +1,30 @@
+.markdown {
+	@apply flex
+    w-full
+    flex-wrap;
+	&__header {
+		@apply w-full
+        text-center
+        text-3xl
+        my-4;
+	}
+
+	&-app {
+		@apply flex
+        m-auto
+        w-10/12
+        h-screen;
+		&__left,
+		&__right {
+			@apply w-1/2;
+		}
+		&__left__input {
+			@apply w-full
+				h-full;
+		}
+		&__right {
+			@apply border
+        bg-primary-light;
+		}
+	}
+}

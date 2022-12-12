@@ -14,7 +14,11 @@ const routes: RouteRecordRaw[] = [
         path: 'calender',
         name: 'Calender',
         component: () => import('@/pages/Calender.vue')
-      }
+      },
+      {
+        path: 'markdown',
+        name: 'Markdown',
+        component: () => import('@/pages/MarkdownPage.vue')      }
     ]
   }
 

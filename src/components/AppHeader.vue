@@ -5,16 +5,12 @@
 		>
 		<div class="header__buttons">
 			<router-link
-				:to="'/marvel-heroes'"
+				v-for="link in links"
+				:key="link.name"
+				:to="link.path"
 				active-class="active"
-				class="header__buttons-1"
-				>Marvel Heroes</router-link
-			>
-			<router-link
-				:to="'/calender'"
-				active-class="active"
-				class="header__buttons-2"
-				>Calender</router-link
+				:class="link.className"
+				>{{ link.name }}</router-link
 			>
 		</div>
 	</nav>
@@ -25,5 +21,26 @@ import { defineComponent } from "@vue/runtime-core";
 
 export default defineComponent({
 	name: "AppHeader",
+	data() {
+		return {
+			links: [
+				{
+					path: "/marvel-heroes",
+					name: "Marvel Heroes",
+					className: "header__buttons-1",
+				},
+				{
+					path: "/calender",
+					name: "Calender",
+					className: "header__buttons-2",
+				},
+				{
+					path: "/markdown",
+					name: "Markdown",
+					className: "header__buttons-3",
+				},
+			],
+		};
+	},
 });
 </script>

@@ -14,14 +14,14 @@
         flex
         gap-4
         text-blue-grey;
-        &-1, &-2{
+        &-1, &-2, &-3{
           @apply
             border
             px-1
             rounded
             bg-white;
         }
-        &-1:hover, .active , &-2:hover{
+        &-1:hover, .active , &-2:hover, &-3:hover{
           @apply
             border-primary-default
             bg-blue-grey
