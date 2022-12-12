@@ -15,7 +15,8 @@
 		&-1,
 		&-2,
 		&-3,
-		&-4 {
+		&-4,
+		&-5 {
 			@apply border
             px-1
             rounded
@@ -25,7 +26,8 @@
 		.active,
 		&-2:hover,
 		&-3:hover,
-		&-4:hover {
+		&-4:hover,
+		&-5:hover {
 			@apply border-primary-default
             bg-blue-grey
             text-primary-light;

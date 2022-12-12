@@ -1,8 +1,20 @@
 <template>
 	<div class="slider">
-		<h1 class="slider__header">Slider App</h1>
 		<div v-for="(slide, index) in slides" class="slider__items" :key="slide">
-			<div v-if="currentSlide == index" :class="slide"></div>
+			<transition name="fade">
+				<div v-if="currentSlide == index" :class="slide"></div>
+			</transition>
+		</div>
+		<div class="slider__dots">
+			<div class="slider__dots__page">
+				<div
+					v-for="(slide, index) in slides"
+					:key="slide"
+					:class="currentSlide == index ? 'bg-blue-grey' : 'bg-primary-light'"
+					class="slider__dot"
+					@click="makeActive(index)"
+				></div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -14,15 +26,20 @@ export default defineComponent({
 	name: "Slider",
 	data(): { currentSlide: number; interval: any; slides: string[] } {
 		return {
-			currentSlide: 0,
+			currentSlide: 1,
 			interval: "",
 			slides: ["slider__item-1", "slider__item-2", "slider__item-3"],
 		};
 	},
+	methods: {
+		makeActive(index: number) {
+			this.currentSlide = index;
+		},
+	},
 	mounted() {
 		this.interval = setInterval(() => {
 			this.currentSlide = this.currentSlide === 2 ? 0 : this.currentSlide + 1;
-		}, 2000);
+		}, 3000);
 	},
 	beforeUnmount() {
 		clearInterval(this.interval);
