@@ -2,7 +2,10 @@
 	<div class="slider">
 		<div v-for="(slide, index) in slides" class="slider__items" :key="slide">
 			<transition name="fade">
-				<div v-if="currentSlide == index" :class="slide"></div>
+				<div v-if="currentSlide == index" :class="slide">
+					<p v-if="index == 1">Kings rule</p>
+					<p v-else-if="index == 0">Jesus is King</p>
+				</div>
 			</transition>
 		</div>
 		<div class="slider__dots">

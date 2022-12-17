@@ -18,6 +18,7 @@
 				type="text"
 				v-model.lazy="newHero"
 				placeholder="Type Hero name here"
+				ref="newHeroRef"
 			/>
 			<button type="submit">Add hero</button>
 		</form>
@@ -26,37 +27,84 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/runtime-core";
+import { computed, defineComponent, onMounted } from "@vue/runtime-core";
+import { ref } from "vue";
+// Composition API
 
 export default defineComponent({
-	name: "MarvelHeroes",
-	data() {
+	setup() {
+		// Variables
+		const title = "Marvel Heroes";
+		const newHero = ref("");
+		const newHeroRef = ref<HTMLInputElement | null>(null);
+
+		// Objects
+		const marvelHeroes = ref([
+			{ name: "Thor" },
+			{ name: "Iron-Man" },
+			{ name: "Hulk" },
+			{ name: "Captain America" },
+		]);
+
+		// Functions
+		function addHero() {
+			if (newHero.value !== "") {
+				marvelHeroes.value.push({ name: newHero.value });
+				newHero.value = "";
+			}
+		}
+		function remove(index: number) {
+			marvelHeroes.value = marvelHeroes.value.filter((hero, i) => i !== index);
+		}
+
+		const herosCount = computed(() => {
+			return marvelHeroes.value.length;
+		});
+
+		onMounted(() => {
+			newHeroRef.value?.focus();
+		});
+
 		return {
-			title: "Marvel Heroes",
-			newHero: "",
-			marvelHeroes: [
-				{ name: "Thor" },
-				{ name: "Iron-Man" },
-				{ name: "Hulk" },
-				{ name: "Captain America" },
-			],
+			marvelHeroes,
+			newHero,
+			newHeroRef,
+			title,
+			remove,
+			addHero,
+			herosCount,
 		};
 	},
-	methods: {
-		addHero() {
-			if (this.newHero !== "") {
-				this.marvelHeroes.push({ name: this.newHero });
-				this.newHero = "";
-			}
-		},
-		remove(index: number) {
-			this.marvelHeroes = this.marvelHeroes.filter((hero, i) => i !== index);
-		},
-	},
-	computed: {
-		herosCount(): number {
-			return this.marvelHeroes.length;
-		},
-	},
+	name: "MarvelHeroes",
+
+	// Options API
+	// data() {
+	// 	return {
+	// 		title: "Marvel Heroes",
+	// 		newHero: "",
+	// 		marvelHeroes: [
+	// 			{ name: "Thor" },
+	// 			{ name: "Iron-Man" },
+	// 			{ name: "Hulk" },
+	// 			{ name: "Captain America" },
+	// 		],
+	// 	};
+	// },
+	// methods: {
+	// 	addHero() {
+	// 		if (this.newHero !== "") {
+	// 			this.marvelHeroes.push({ name: this.newHero });
+	// 			this.newHero = "";
+	// 		}
+	// 	},
+	// 	remove(index: number) {
+	// 		this.marvelHeroes = this.marvelHeroes.filter((hero, i) => i !== index);
+	// 	},
+	// },
+	// computed: {
+	// 	herosCount(): number {
+	// 		return this.marvelHeroes.length;
+	// 	},
+	// },
 });
 </script>

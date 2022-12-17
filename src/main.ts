@@ -1,8 +1,15 @@
 import { createApp } from 'vue'
-import '@/styles/globals.scss'
 import App from '@/App.vue'
+
+// STYLES
+import '@/styles/globals.scss'
+
+// ROUTER
 import router from './router'
-// import Markdown from 'vue3-markdown-it'
 
+// EMITTER
+import mitt from 'mitt'
 
+const emitter = mitt();
+createApp(App).config.globalProperties.emitter = emitter
 createApp(App).use(router).mount('#app-root')

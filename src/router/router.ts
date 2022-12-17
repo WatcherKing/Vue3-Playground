@@ -24,6 +24,11 @@ const routes: RouteRecordRaw[] = [
         path: 'slider',
         name: 'Slider',
         component: () => import('@/pages/Slider.vue')
+      },
+      {
+        path: 'calculator',
+        name: 'Calculator',
+        component: () => import('@/pages/Calculator.vue')
       }
     ]
   }

@@ -1,0 +1,32 @@
+.frame {
+	@apply h-screen
+    w-screen
+    bg-primary-translucent
+    fixed
+    top-0
+    opacity-50
+    z-20;
+}
+.position {
+	@apply absolute
+    inset-0;
+}
+
+.centerlize {
+	@apply flex
+  h-full;
+}
+
+.modal {
+	@apply m-auto
+    bg-white
+    p-2
+    rounded
+    shadow
+    z-30
+    w-1/3;
+	&__header {
+		@apply text-2xl
+      text-center;
+	}
+}

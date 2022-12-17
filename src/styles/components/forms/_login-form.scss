@@ -1,0 +1,21 @@
+.form {
+	@apply p-2
+    my-2;
+	&__control {
+		@apply my-4;
+		.form__btn {
+			@apply w-full
+      rounded
+      shadow-md
+      bg-primary-default
+      text-white
+      p-2;
+		}
+	}
+	&__input {
+		@apply rounded
+      shadow
+      p-2
+      w-full;
+	}
+}

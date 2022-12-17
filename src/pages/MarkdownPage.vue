@@ -8,6 +8,7 @@
 					placeholder="Type your blog post"
 					:value="text"
 					@input="update"
+					ref="markdownRef"
 				></textarea>
 			</article>
 			<article class="markdown-app__right" v-html="markedText"></article>
@@ -50,6 +51,9 @@ export default defineComponent({
 			const task = () => (this.text = e.target.value);
 			this.debounce(task, 500);
 		},
+	},
+	mounted() {
+		this.$refs.markdownRef.focus();
 	},
 });
 </script>
